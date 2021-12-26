@@ -1,0 +1,26 @@
+version: '3'
+
+services:
+
+  webthumbnailer:
+    build: ./containers/webthumbnailer/
+    restart: always
+    ports:
+      - 8000:80
+    volumes:
+      - ./containers/webthumbnailer/src:/app/public
+      - ./containers/webthumbnailer/config/rules.json:/app/public/vendor/arthurhoaro/web-thumbnailer/src/resources/rules.json
+      - packages:/app/public/vendor
+    environment:
+      - 'CONTAINER_TIMEZONE=Australia/Perth'
+      - 'APACHE_SERVER_NAME=localhost'
+      - 'PHP_DATE_TIMEZONE=Australia\/Perth'
+      - 'PHP_ERROR_REPORTING=E_ALL'
+      - 'PHP_DISPLAY_ERRORS=On'
+      - 'PHP_VARIABLES_ORDER=EGPCS'
+    cap_add:
+      - SYS_TIME
+      - SYS_NICE
+
+volumes:
+  packages:

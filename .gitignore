@@ -1,0 +1,11 @@
+*.sublime*
+*sftp-config*
+.DS_Store
+Thumbs.db
+
+**/src/cache
+**/src/vendor
+deploy.sh
+docker-compose-*
+
+*-exclude

@@ -1,0 +1,19 @@
+{
+	"repositories": [
+		{
+			"type": "composer",
+			"url": "https://asset-packagist.org"
+		}
+	],
+	"require": {
+		"arthurhoaro/web-thumbnailer": "2.1.0"
+	},
+	"config": {
+		"platform" : {
+			"php": "7.4.6",
+			"ext-gd": "1",
+			"ext-exif": "1"
+		}
+	},
+	"minimum-stability": "dev"
+}
